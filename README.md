@@ -54,8 +54,7 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 5. GPT-4o returns a **JSON ranking** of the competitors.
 
 ---
-# Application Flow:
-
+# Multi-LLM Evaluation Workflow:
                  ┌─────────────────────┐
                  │    Host LLM (70B)   │
                  │ e.g., LLaMA3-70B    │
@@ -101,8 +100,6 @@ Answers captured and stored ➝ Combined into a unified format
              │   Final Ranking Returned   │
              │   in JSON Format           │
              └────────────────────────────┘
-
-
 ---
 
 ## 🛠️ Tech Stack
