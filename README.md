@@ -56,7 +56,7 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 ---
 # Application Flow:
 
-[ LLaMA 3 70B (Host) ]
+[ LLaMA 3 70B (Host) ]  -> (Generates hard question)  -> Contestants:
         |
         v
 (Generates hard question)
