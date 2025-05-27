@@ -54,6 +54,7 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 5. GPT-4o returns a **JSON ranking** of the competitors.
 
 ---
+
 # Multi-LLM Evaluation Workflow:
 
                  ┌─────────────────────┐
