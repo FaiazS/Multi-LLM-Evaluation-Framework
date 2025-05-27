@@ -55,6 +55,7 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 
 ---
 # Multi-LLM Evaluation Workflow:
+
                  ┌─────────────────────┐
                  │    Host LLM (70B)   │
                  │ e.g., LLaMA3-70B    │
@@ -89,9 +90,12 @@ Answers captured and stored ➝ Combined into a unified format
                           │
                           ▼
        ┌───────────────────────────────────────────┐
-       │ Judge evaluates responses based on:       │
-       │ - Depth                                   │
-       │ - Clarity                                 │
+       │ Judge evaluates responses based on:   
+       │
+       │ - Depth                   
+       │
+       │ - Clarity                
+       │
        │ - Relevance & Nuance                      │
        └────────────────┬──────────────────────────┘
                           │
