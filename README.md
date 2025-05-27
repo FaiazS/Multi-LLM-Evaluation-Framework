@@ -56,25 +56,52 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 ---
 # Application Flow:
 
-[ LLaMA 3 70B (Host) ]  -> (Generates hard question)  -> Contestants:
-        |
-        v
-(Generates hard question)
-        |
-        v
-+-------------------------------+
-|         Contestants           |
-| LLaMA 3 8B → Answer           |
-| Qwen 32B → Answer             |
-| Gemini Flash → Answer         |
-| Mistral 24B → Answer          |
-+-------------------------------+
-        |
-        v
-[ GPT-4o Judge ]
-        |
-        v
-Ranks and gives final result in JSON
+                 ┌─────────────────────┐
+                 │    Host LLM (70B)   │
+                 │ e.g., LLaMA3-70B    │
+                 └────────┬────────────┘
+                          │
+                          ▼
+        ┌────────────────────────────────────┐
+        │ Generates a complex, nuanced       │
+        │ question to challenge other LLMs   │
+        └────────────────┬───────────────────┘
+                          │
+                          ▼
+          ┌────────────────────────────────┐
+          │  Question sent to Competitors  │
+          └────────────────────────────────┘
+                          │
+         ┌────────────────┼────────────────────────────┬────────────┬────────────┐
+         ▼                ▼                            ▼            ▼            ▼
+┌─────────────┐  ┌────────────────┐          ┌────────────────┐  ┌──────────┐ ┌──────────┐
+│ LLaMA3-8B   │  │ Qwen-32B       │          │ Gemini-2 Flash │  │ Mistral  │ │ Mixtral  │
+│ (Groq API)  │  │ (Groq API)     │          │ (Google API)   │  │ (Groq)   │ │ (Groq)   │
+└────┬────────┘  └────┬───────────┘          └────┬────────────┘  └────┬─────┘ └────┬─────┘
+     │               │                            │                   │            │
+     ▼               ▼                            ▼                   ▼            ▼
+Answers captured and stored ➝ Combined into a unified format
+                          │
+                          ▼
+         ┌────────────────────────────────────┐
+         │   Answers sent to Judge LLM (GPT)  │
+         │         e.g., GPT-4o               │
+         └────────────────┬───────────────────┘
+                          │
+                          ▼
+       ┌───────────────────────────────────────────┐
+       │ Judge evaluates responses based on:       │
+       │ - Depth                                   │
+       │ - Clarity                                 │
+       │ - Relevance & Nuance                      │
+       └────────────────┬──────────────────────────┘
+                          │
+                          ▼
+             ┌────────────────────────────┐
+             │   Final Ranking Returned   │
+             │   in JSON Format           │
+             └────────────────────────────┘
+
 
 ---
 
