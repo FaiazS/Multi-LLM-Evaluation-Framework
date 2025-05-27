@@ -75,6 +75,7 @@ This project helps benchmark how different LLMs respond to a **challenging and n
         |
         v
 Ranks and gives final result in JSON
+
 ---
 
 ## 🛠️ Tech Stack
