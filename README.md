@@ -54,6 +54,28 @@ This project helps benchmark how different LLMs respond to a **challenging and n
 5. GPT-4o returns a **JSON ranking** of the competitors.
 
 ---
+# Application Flow:
+
+[ LLaMA 3 70B (Host) ]
+        |
+        v
+(Generates hard question)
+        |
+        v
++-------------------------------+
+|         Contestants           |
+| LLaMA 3 8B → Answer           |
+| Qwen 32B → Answer             |
+| Gemini Flash → Answer         |
+| Mistral 24B → Answer          |
++-------------------------------+
+        |
+        v
+[ GPT-4o Judge ]
+        |
+        v
+Ranks and gives final result in JSON
+---
 
 ## 🛠️ Tech Stack
 
