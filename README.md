@@ -149,6 +149,20 @@ This indicates the ranking of each model by answer quality.
 
 ---
 
+## Learnings 
+
+* Orchestrating Multiple LLMs
+
+* Prompting LLMs to generate tasks
+
+* Evaluating and comparing LLMs head-to-head
+
+* Real-world multi-model evaluation
+
+* Use of Groq + OpenAI + Gemini in one pipeline
+
+* Handling response formatting, ranking, and output presentation
+---
 ## 🧑‍💻 Author
 
 **Faiaz Ahmed**
