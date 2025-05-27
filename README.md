@@ -100,6 +100,7 @@ Answers captured and stored ➝ Combined into a unified format
              │   Final Ranking Returned   │
              │   in JSON Format           │
              └────────────────────────────┘
+             
 ---
 
 ## 🛠️ Tech Stack
